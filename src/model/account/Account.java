@@ -59,9 +59,9 @@ public class Account {
 	}
 	
 	public void withdraw(Double amount) throws ExerciseException{
-		if(amount>withdrawLimit) {
+		if(amount>getWithdrawLimit()) {
 			throw new ExerciseException("The amount exceeds withdraw limit");
-		}else if((balance-amount)<0){
+		}else if((getBalance()-amount)<0){
 			throw new ExerciseException("Not enough balance");
 		}
 		else{
